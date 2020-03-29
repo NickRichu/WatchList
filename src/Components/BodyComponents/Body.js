@@ -1,0 +1,20 @@
+import React from "react";
+
+import { Grid, makeStyles, Paper } from "@material-ui/core";
+
+const useStyles = makeStyles(theme => ({
+  paper: {
+    height: "85vh",
+    textAlign: "center",
+    color: theme.palette.text.secondary
+  }
+}));
+
+export const Body = () => {
+  const classes = useStyles();
+  return (
+    <Grid item xs={10} className={classes.paper}>
+      <Paper className={classes.paper}>stuff here</Paper>
+    </Grid>
+  );
+};
