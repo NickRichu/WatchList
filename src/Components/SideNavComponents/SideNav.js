@@ -10,23 +10,24 @@ import {
   Box,
   Typography
 } from "@material-ui/core";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
-    height: "7vh"
-  },
-  listItem: {
-    height: "100%",
-    width: "100%"
+    textAlign: "center"
   },
   paper: {
     height: "70vh",
-    textAlign: "center",
+    // textAlign: "center",
     backgroundColor: "#212121",
     paddingTop: "15vh",
     color: "white"
+  },
+  notification: {
+    display: "inline-block",
+    paddingTop: "0.45vh"
   }
-});
+}));
 
 export const SideNav = () => {
   // function SelectedListItem() {
@@ -43,103 +44,120 @@ export const SideNav = () => {
       <Paper className={classes.paper}>
         <List component="nav" aria-label="main mailbox folders">
           <Grid container direction="column" spacing={0}>
-            <Grid item xs={12}>
+            <Grid container item xs={12}>
               <ListItem
                 button
                 className={classes.listItem}
                 // selected={selectedIndex === 0}
                 // onClick={(event) => handleListItemClick(event, 0)}
               >
-                <ListItemText
-                  disableTypography
-                  primary={
-                    <Typography variant="subtitle1" noWrap>
-                      <Box
-                        letterSpacing={0}
-                        fontFamily="Monospace"
-                        fontWeight={400}
-                        textAlign="center"
-                      >
-                        MARKET
-                      </Box>
-                    </Typography>
-                  }
-                />
+                <Grid className={classes.root} item xs={3}>
+                  <FiberManualRecordIcon className={classes.notification} />
+                </Grid>
+                <Grid item xs={9}>
+                  <ListItemText
+                    disableTypography
+                    primary={
+                      <Typography variant="subtitle1" noWrap>
+                        <Box
+                          letterSpacing={0}
+                          fontFamily="Monospace"
+                          fontWeight={400}
+                          textAlign="left"
+                        >
+                          WATCHLIST
+                        </Box>
+                      </Typography>
+                    }
+                  />
+                </Grid>
               </ListItem>
             </Grid>
-
-            <Grid item xs={12}>
+            <Grid container item xs={12}>
               <ListItem
                 button
-                className={classes.root}
+                className={classes.listItem}
                 // selected={selectedIndex === 0}
                 // onClick={(event) => handleListItemClick(event, 0)}
               >
-                <ListItemText
-                  disableTypography
-                  primary={
-                    <Typography variant="subtitle1" noWrap>
-                      <Box
-                        letterSpacing={0}
-                        fontFamily="Monospace"
-                        fontWeight={400}
-                        textAlign="center"
-                      >
-                        WATCHLIST
-                      </Box>
-                    </Typography>
-                  }
-                />
+                <Grid className={classes.root} item xs={3}>
+                  <FiberManualRecordIcon className={classes.notification} />
+                </Grid>
+                <Grid item xs={9}>
+                  <ListItemText
+                    disableTypography
+                    primary={
+                      <Typography variant="subtitle1" noWrap>
+                        <Box
+                          letterSpacing={0}
+                          fontFamily="Monospace"
+                          fontWeight={400}
+                          textAlign="left"
+                        >
+                          MARKET
+                        </Box>
+                      </Typography>
+                    }
+                  />
+                </Grid>
               </ListItem>
             </Grid>
-
-            <Grid item xs={12}>
+            <Grid container item xs={12}>
               <ListItem
                 button
-                className={classes.root}
+                className={classes.listItem}
                 // selected={selectedIndex === 0}
                 // onClick={(event) => handleListItemClick(event, 0)}
               >
-                <ListItemText
-                  disableTypography
-                  primary={
-                    <Typography variant="subtitle1" noWrap>
-                      <Box
-                        letterSpacing={0}
-                        fontFamily="Monospace"
-                        fontWeight={400}
-                        textAlign="center"
-                      >
-                        FUTURES
-                      </Box>
-                    </Typography>
-                  }
-                />
+                <Grid className={classes.root} item xs={3}>
+                  <FiberManualRecordIcon className={classes.notification} />
+                </Grid>
+                <Grid item xs={9}>
+                  <ListItemText
+                    disableTypography
+                    primary={
+                      <Typography variant="subtitle1" noWrap>
+                        <Box
+                          letterSpacing={0}
+                          fontFamily="Monospace"
+                          fontWeight={400}
+                          textAlign="left"
+                        >
+                          FUTURES
+                        </Box>
+                      </Typography>
+                    }
+                  />
+                </Grid>
               </ListItem>
             </Grid>
-
-            <Grid item xs={12}>
+            <Grid container item xs={12}>
               <ListItem
                 button
-                className={classes.root}
+                className={classes.listItem}
                 // selected={selectedIndex === 0}
                 // onClick={(event) => handleListItemClick(event, 0)}
               >
-                <ListItemText
-                  disableTypography
-                  primary={
-                    <Typography variant="subtitle1" noWrap>
-                      <Box
-                        letterSpacing={0}
-                        fontFamily="Monospace"
-                        fontWeight={400}
-                        textAlign="center"
-                      >
-                        SECTORS
-                      </Box>
-                    </Typography>
-                  }
-                />
+                <Grid className={classes.root} item xs={3}>
+                  <FiberManualRecordIcon className={classes.notification} />
+                </Grid>
+                <Grid item xs={9}>
+                  <ListItemText
+                    disableTypography
+                    primary={
+                      <Typography variant="subtitle1" noWrap>
+                        <Box
+                          letterSpacing={0}
+                          fontFamily="Monospace"
+                          fontWeight={400}
+                          textAlign="left"
+                        >
+                          SECTORS
+                        </Box>
+                      </Typography>
+                    }
+                  />
+                </Grid>
               </ListItem>
             </Grid>
           </Grid>

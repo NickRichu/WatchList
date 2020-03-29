@@ -14,7 +14,7 @@ export const Body = () => {
   const classes = useStyles();
   return (
     <Grid item xs={10} className={classes.paper}>
-      <Paper className={classes.paper}>stuff here</Paper>
+      <Paper elevation={3} className={classes.paper}>stuff here</Paper>
     </Grid>
   );
 };
