@@ -9,13 +9,22 @@ import { theme } from "../theme";
 
 const useStyles = makeStyles({
   title: {
-    height: "8vh",
-    paddingTop: "3vh",
+    height: "10vh",
+    // paddingTop: "3vh",
     background: "#212121 ",
-    color: "white"
+    color: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   appBox: {
-    marginRight: "4vh"
+    
+  // top: "50%"
+    //marginRight: "4vh"
+    // textAlign: "center"
+  //   display: "flex",
+  // // alignItems: "center",
+  // justifyContent: "center"
   },
  
 });
