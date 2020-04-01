@@ -4,7 +4,7 @@ import { Grid, makeStyles, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    height: "85vh",
+    height: "88vh",
     textAlign: "center",
     color: theme.palette.text.secondary
   }
