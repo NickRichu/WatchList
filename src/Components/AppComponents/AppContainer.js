@@ -5,10 +5,6 @@ import { App } from "./App";
 
 const useStyles = makeStyles(theme => ({
   app_grid: {
-    marginTop: theme.spacing(0),
-    marginBottom: theme.spacing(0),
-    marginRight: theme.spacing(0),
-    marginLeft: theme.spacing(0)
   }
 }));
 
