@@ -1,56 +1,51 @@
 import React from "react";
 import {
   Grid,
-  makeStyles,
+ // makeStyles,
   ListItem,
   ListItemText,
   Box,
-  Typography
+  Typography,
+  Icon
 } from "@material-ui/core";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const useStyles = makeStyles(theme => ({
-  //   currPageNotifier: {
-  //   //  float: "right",
-  // //    visibility: "hidden"
-
-  //   },
-  //   currentPage: {
-  //       paddingLeft:theme.spacing(2)
-
-  //}
-  button: {
-    width: "100%"
-    // justifyContent:"flex-end"
-  },
-  currPageNotifier: {
-    // display: "flex",
-    // justifyContent: "right",
-    //   alignItems: "center",
-  },
-  currentPage: {}
-}));
+// const useStyles = makeStyles(theme => ({
+//   button: {
+//     //width: "100%"
+//     // justifyContent:"flex-end"
+//   },
+//   currPageNotifier: {
+//     // background: "white"
+//     // display: "flex",
+//     // justifyContent: "right",
+//     //   alignItems: "center",
+//   },
+//   currentPage: {}
+// }));
 
 export const NavListItem = props => {
-  const classes = useStyles();
+ // const classes = useStyles();
   return (
-    <ListItem classNames={classes.button} button onClick={props.clickHandler}>
+    <ListItem button onClick={props.clickHandler}>
       <Grid container alignItems="center" spacing="2">
         <Grid item xs={4}>
-          <Grid container  justify="flex-end" >
-            <FiberManualRecordIcon className={classes.currPageNotifier} />
+          <Grid container justify="flex-end">
+            <Icon>
+              <img
+                alt="corresponding link logo"
+                src={props.logo}
+                height={25}
+                width={20}
+              />
+            </Icon>
           </Grid>
         </Grid>
         <Grid item xs={8}>
-          <Grid container justify="flex-start" >
+          <Grid container justify="flex-start">
             <ListItemText
               disableTypography
               primary={
-                <Typography
-                  variant="subtitle1"
-                  noWrap
-                  className={classes.currentPage}
-                >
+                <Typography variant="subtitle1" noWrap>
                   <Box
                     letterSpacing={0}
                     fontFamily="Monospace"
@@ -66,6 +61,5 @@ export const NavListItem = props => {
         </Grid>
       </Grid>
     </ListItem>
-  
   );
 };

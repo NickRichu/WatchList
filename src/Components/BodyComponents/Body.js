@@ -4,7 +4,7 @@ import { Grid, makeStyles, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    height: "88vh",
+    height: "86vh",
    
   }
 }));
