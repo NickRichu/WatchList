@@ -3,7 +3,7 @@ import React from "react";
 import { Typography, Box, Grid } from "@material-ui/core/";
 
 
-export const TopBar = () => {
+export const TopBar = props => {
   return (
      
           <Grid container spacing={0}>
@@ -34,7 +34,7 @@ export const TopBar = () => {
                   fontWeight="500"
                   textAlign="center"
                 >
-                  WATCHLIST
+                  {props.pageLabel}
                 </Box>
               </Typography>
             </Grid>

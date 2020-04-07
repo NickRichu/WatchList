@@ -1,5 +1,5 @@
 import React from "react";
-
+import { StateProvider } from '../../Store/store.js';
 import {
   Grid
   // makeStyles
@@ -14,8 +14,10 @@ import { App } from "./App";
 export const AppContainer = () => {
   // const classes = useStyles();
   return (
+    <StateProvider>
     <Grid>
       <App />
     </Grid>
+    </StateProvider>
   );
 };

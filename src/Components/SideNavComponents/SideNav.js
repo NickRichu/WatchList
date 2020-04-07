@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 
 import { Grid, makeStyles, Paper, List } from "@material-ui/core";
 
@@ -7,6 +7,7 @@ import MarketLogo from "../../Static/stock.svg";
 import WatchlistLogo from "../../Static/plan.svg";
 import SectorsLogo from "../../Static/pie-chart.svg";
 import FuturesLogo from "../../Static/future.svg";
+import { store } from "../../Store/store";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -23,11 +24,26 @@ const props = {
   Watchlist: { name: "WATCHLIST", logo: WatchlistLogo },
   Futures: { name: "FUTURES", logo: FuturesLogo },
   Sectors: { name: "SECTORS", logo: SectorsLogo }
- 
 };
 export const SideNav = () => {
-  const clickHandler = () => {
-    console.log("whats good");
+  // Subscribe to `contacts` state and access dispatch function
+  const [state, dispatch] = useContext(store);
+  // Declare a local state to be used internally by this component
+  const [selectedPage, setSelectedPage] = useState();
+
+  const updateCurrentPage = currentPage => {
+    dispatch({
+      type: "SET_NAVBAR_CURRENT_PAGE",
+      payload: { currentPage: selectedPage }
+    });
+  };
+
+  const clickHandler = e => {
+    const label = e.target.textContent;
+    setSelectedPage(label);
+    updateCurrentPage(selectedPage);
+
+    console.log(state);
   };
   const classes = useStyles();
   // const state = props();
@@ -50,11 +66,20 @@ export const SideNav = () => {
             className={classes.nav_list_item}
             name={props.Watchlist.name}
             logo={props.Watchlist.logo}
+            clickHandler={clickHandler}
           />
-          <NavListItem className={classes.nav_list_item} name={props.Sectors.name}
-            logo={props.Sectors.logo} />
-          <NavListItem className={classes.nav_list_item} name={props.Futures.name}
-            logo={props.Futures.logo} />
+          <NavListItem
+            className={classes.nav_list_item}
+            name={props.Sectors.name}
+            logo={props.Sectors.logo}
+            clickHandler={clickHandler}
+          />
+          <NavListItem
+            className={classes.nav_list_item}
+            name={props.Futures.name}
+            logo={props.Futures.logo}
+            clickHandler={clickHandler}
+          />
         </List>
       </Paper>
     </Grid>

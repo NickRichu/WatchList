@@ -27,7 +27,7 @@ export const NavListItem = props => {
  // const classes = useStyles();
   return (
     <ListItem button onClick={props.clickHandler}>
-      <Grid container alignItems="center" spacing="2">
+      <Grid container alignItems="center" >
         <Grid item xs={4}>
           <Grid container justify="flex-end">
             <Icon>
