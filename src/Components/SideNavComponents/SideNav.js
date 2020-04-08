@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   nav_list_block: {
-    top: "15%"
+    top: "15%",
   }
 }));
 const props = {
@@ -29,19 +29,23 @@ export const SideNav = () => {
   // Subscribe to `contacts` state and access dispatch function
   const [state, dispatch] = useContext(store);
   // Declare a local state to be used internally by this component
-  const [selectedPage, setSelectedPage] = useState();
+  const [selectedPage, setSelectedPage] = useState({currentPage: state.currentPage});
 
   const updateCurrentPage = currentPage => {
     dispatch({
       type: "SET_NAVBAR_CURRENT_PAGE",
-      payload: { currentPage: selectedPage }
+      payload: { currentPage: currentPage }
     });
   };
 
   const clickHandler = e => {
     const label = e.target.textContent;
     setSelectedPage(label);
-    updateCurrentPage(selectedPage);
+    dispatch({
+      type: "SET_NAVBAR_CURRENT_PAGE",
+      payload: { currentPage: label }
+    });
+    //updateCurrentPage(selectedPage);
 
     console.log(state);
   };
