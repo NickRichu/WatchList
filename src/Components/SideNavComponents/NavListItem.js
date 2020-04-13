@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Grid,
- // makeStyles,
+ makeStyles,
   ListItem,
   ListItemText,
   Box,
@@ -9,24 +9,23 @@ import {
   Icon
 } from "@material-ui/core";
 
-// const useStyles = makeStyles(theme => ({
-//   button: {
-//     //width: "100%"
-//     // justifyContent:"flex-end"
-//   },
-//   currPageNotifier: {
-//     // background: "white"
-//     // display: "flex",
-//     // justifyContent: "right",
-//     //   alignItems: "center",
-//   },
-//   currentPage: {}
-// }));
+const useStyles = makeStyles(theme => ({
+  nav_list_item: {
+    "&:active": { backgroundColor: "#00b8d4" }
+  }
+  // currPageNotifier: {
+  //   // background: "white"
+  //   // display: "flex",
+  //   // justifyContent: "right",
+  //   //   alignItems: "center",
+  // },
+  // currentPage: {}
+}));
 
 export const NavListItem = props => {
- // const classes = useStyles();
+ const classes = useStyles();
   return (
-    <ListItem button onClick={props.clickHandler}>
+    <ListItem className={classes.nav_list_item} button onClick={props.clickHandler}>
       <Grid container alignItems="center" >
         <Grid item xs={4}>
           <Grid container justify="flex-end">

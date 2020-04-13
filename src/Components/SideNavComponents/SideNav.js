@@ -12,11 +12,14 @@ import { store } from "../../Store/store";
 const useStyles = makeStyles(theme => ({
   paper: {
     height: "86vh",
-    backgroundColor: "#212121",
+    backgroundColor: theme.palette.common.black,
     color: "white"
   },
   nav_list_block: {
     top: "15%",
+  },
+  nav_list_item: {
+    "&:hover, &.Mui-focusVisible": { backgroundColor: "yellow" }
   }
 }));
 const props = {
